@@ -1,6 +1,6 @@
 // Test data
 
-const videoList = [
+const movieList = [
   { title: "Movie1" },
   { title: "Movie2" },
   { title: "Movie3" },
@@ -17,23 +17,32 @@ const videoList = [
 // Main
 
 export default function Home() {
-  return <VideoList videoList={videoList} />;
+  return (
+    <div>
+      <header>Streamer</header>
+      <MovieList movieList={movieList} />;
+    </div>
+  );
 }
 
 // Components
 
 //to re-define from any!!!
-function VideoList({ videoList }: any) {
+function MovieList({ movieList }: any) {
   return (
-    <ul className="videoList">
-      {videoList.map((movie: any, i: any) => (
-        <Video movie={movie} key={i} />
+    <ul className="movieList">
+      {movieList.map((movie: any, i: any) => (
+        <Movie movie={movie} key={i} />
       ))}
     </ul>
   );
 }
 
 //to re-define from any!!!
-function Video({ movie, img }: any) {
-  return <li className="videoCard">{movie.title}</li>;
+function Movie({ movie, img }: any) {
+  return (
+    <li className="movieCard">
+      <strong className="movieTitle">{movie.title}</strong>
+    </li>
+  );
 }

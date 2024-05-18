@@ -4,17 +4,25 @@
   font-family: sans-serif;
 }
 
-.videoList {
+body {
+  background-color: #437c90;
+}
+
+header {
+  height: 100px;
+}
+
+.movieList {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 50px 20px;
   padding: 20px;
 }
 
-.videoCard {
-  border: 1px solid black;
+.movieCard {
+  border: 2px solid #06070e;
   list-style: none;
   background: #000 center/cover url("../img/movie_placeholder.png") no-repeat;
-  height: 200px;
   padding: 10px;
+  aspect-ratio: 3/ 4;
 }
