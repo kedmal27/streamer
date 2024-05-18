@@ -15,6 +15,21 @@ const videoList = [
   { title: "Movie8" },
 ];
 
+// Styles
+
+const StyledVideoBox = styled.li`
+  border: 1px solid black;
+  list-style: none;
+  height: 200px;
+`;
+
+const StyledVideoList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 50px 20px;
+  padding: 20px;
+`;
+
 // Main
 
 export default function Home() {
@@ -23,29 +38,18 @@ export default function Home() {
 
 // Components
 
+//to re-define from any!!!
 function VideoList({ videos }: any) {
-  const VideoList = styled.ul`
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 50px 20px;
-    padding: 20px;
-  `;
   return (
-    <VideoList>
+    <StyledVideoList>
       {videos.map((movie: any, i: any) => (
         <Video movie={movie} key={i} />
       ))}
-    </VideoList>
+    </StyledVideoList>
   );
 }
 
 //to re-define from any!!!
 function Video({ movie }: any) {
-  const VideoBox = styled.li`
-    border: 1px solid black;
-    list-style: none;
-    height: 200px;
-  `;
-
-  return <VideoBox>{movie.title}</VideoBox>;
+  return <StyledVideoBox>{movie.title}</StyledVideoBox>;
 }
