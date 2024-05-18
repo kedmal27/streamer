@@ -1,7 +1,3 @@
-import { DraftModeProvider } from "next/dist/server/async-storage/draft-mode-provider";
-import { useState } from "react";
-import styled from "styled-components";
-
 // Test data
 
 const videoList = [
@@ -15,41 +11,29 @@ const videoList = [
   { title: "Movie8" },
 ];
 
-// Styles
-
-const StyledVideoBox = styled.li`
-  border: 1px solid black;
-  list-style: none;
-  height: 200px;
-`;
-
-const StyledVideoList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 50px 20px;
-  padding: 20px;
-`;
+// Types
+// TODO
 
 // Main
 
 export default function Home() {
-  return <VideoList videos={videoList} />;
+  return <VideoList videoList={videoList} />;
 }
 
 // Components
 
 //to re-define from any!!!
-function VideoList({ videos }: any) {
+function VideoList({ videoList }: any) {
   return (
-    <StyledVideoList>
-      {videos.map((movie: any, i: any) => (
+    <ul className="videoList">
+      {videoList.map((movie: any, i: any) => (
         <Video movie={movie} key={i} />
       ))}
-    </StyledVideoList>
+    </ul>
   );
 }
 
 //to re-define from any!!!
-function Video({ movie }: any) {
-  return <StyledVideoBox>{movie.title}</StyledVideoBox>;
+function Video({ movie, img }: any) {
+  return <li className="videoCard">{movie.title}</li>;
 }

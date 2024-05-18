@@ -1,0 +1,20 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.videoList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 50px 20px;
+  padding: 20px;
+}
+
+.videoCard {
+  border: 1px solid black;
+  list-style: none;
+  background: #000 center/cover url("../img/movie_placeholder.png") no-repeat;
+  height: 200px;
+  padding: 10px;
+}
