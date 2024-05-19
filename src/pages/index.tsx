@@ -43,6 +43,11 @@ function Movie({ movie, img }: any) {
   return (
     <li className="movieCard">
       <strong className="movieTitle">{movie.title}</strong>
+      <PlayButton />
     </li>
   );
+}
+
+function PlayButton() {
+  return <button className="playButton"></button>;
 }
