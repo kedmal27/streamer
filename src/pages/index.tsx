@@ -39,7 +39,7 @@ function MovieList({ movieList }: any) {
 }
 
 //to re-define from any!!!
-function Movie({ movie, img }: any) {
+function Movie({ movie }: any) {
   return (
     <li className="movieCard">
       <strong className="movieTitle">{movie.title}</strong>

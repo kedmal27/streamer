@@ -49,6 +49,7 @@ header {
   height: 30px;
 
   opacity: 0%;
+  transition: 300ms;
 
   border: none;
   border-radius: 100%;
