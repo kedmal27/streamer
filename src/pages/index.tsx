@@ -1,6 +1,6 @@
 // Test data
 
-const movieList = [
+const movieList: Movie[] = [
   { title: "Movie1" },
   { title: "Movie2" },
   { title: "Movie3" },
@@ -12,7 +12,10 @@ const movieList = [
 ];
 
 // Types
-// TODO
+
+type Movie = {
+  title: string;
+};
 
 // Main
 
@@ -28,10 +31,10 @@ export default function Home() {
 // Components
 
 //to re-define from any!!!
-function MovieList({ movieList }: any) {
+function MovieList({ movieList }: { movieList: Movie[] }) {
   return (
     <ul className="movieList">
-      {movieList.map((movie: any, i: any) => (
+      {movieList.map((movie, i) => (
         <Movie movie={movie} key={i} />
       ))}
     </ul>
@@ -39,7 +42,7 @@ function MovieList({ movieList }: any) {
 }
 
 //to re-define from any!!!
-function Movie({ movie }: any) {
+function Movie({ movie }: { movie: Movie }) {
   return (
     <li className="movieCard">
       <strong className="movieTitle">{movie.title}</strong>
