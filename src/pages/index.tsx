@@ -30,7 +30,6 @@ export default function Home() {
 
 // Components
 
-//to re-define from any!!!
 function MovieList({ movieList }: { movieList: Movie[] }) {
   return (
     <ul className="movieList">
@@ -41,7 +40,6 @@ function MovieList({ movieList }: { movieList: Movie[] }) {
   );
 }
 
-//to re-define from any!!!
 function Movie({ movie }: { movie: Movie }) {
   return (
     <li className="movieCard">
