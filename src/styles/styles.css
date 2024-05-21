@@ -12,7 +12,7 @@ header {
   height: 100px;
 }
 
-.movieList {
+.videoList {
   display: grid;
 
   padding: 20px;
@@ -21,7 +21,7 @@ header {
   grid-template-columns: repeat(5, 1fr);
 }
 
-.movieCard {
+.videoCard {
   position: relative;
 
   padding: 10px;
@@ -34,7 +34,7 @@ header {
   border: 2px solid #06070e;
 }
 
-.movieCard:hover {
+.videoCard:hover {
   transition: 300ms;
   box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1);
   border: 2px solid #f7c23b;
@@ -56,7 +56,7 @@ header {
   background: #f7c23b center/cover url("../img/play-button.png") no-repeat;
 }
 
-.movieCard:hover .playButton {
+.videoCard:hover .playButton {
   transition: 500ms;
   opacity: 100%;
   cursor: pointer;

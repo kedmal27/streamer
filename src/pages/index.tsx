@@ -1,54 +1,69 @@
-// Test data
+"use client";
+import { useEffect, useState } from "react";
+import { Video, useVideos } from "../hooks/useVideos";
 
-const movieList: Movie[] = [
-  { title: "Movie1" },
-  { title: "Movie2" },
-  { title: "Movie3" },
-  { title: "Movie4" },
-  { title: "Movie5" },
-  { title: "Movie6" },
-  { title: "Movie7" },
-  { title: "Movie8" },
-];
+// TYPES
 
-// Types
+type VideoListProps = { videoList: Video[] };
 
-type Movie = {
-  title: string;
+type PlayerProps = {
+  source: string;
+  controls?: boolean;
+  autoPlay?: boolean;
 };
 
-// Main
+// MAIN
 
 export default function Home() {
+  const { fetchVideo, fetchVideos } = useVideos();
+
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    const videoList = fetchVideos();
+    setVideos(videoList);
+  }, []);
+
   return (
     <div>
       <header>Streamer</header>
-      <MovieList movieList={movieList} />;
+      <Player source={""} />
+      <VideoList videoList={[]} />
     </div>
   );
 }
 
-// Components
+// COMPONENTS
 
-function MovieList({ movieList }: { movieList: Movie[] }) {
+const Player = ({ source, controls = true, autoPlay = true }: PlayerProps) => {
   return (
-    <ul className="movieList">
-      {movieList.map((movie, i) => (
-        <Movie movie={movie} key={i} />
+    <video controls={controls} autoPlay={autoPlay} preload="auto">
+      <source src={source} type="application/x-mpegURL" />
+    </video>
+  );
+};
+
+// Video Cards List
+const VideoList = ({ videoList }: VideoListProps) => {
+  return (
+    <ul className="videoList">
+      {videoList.map((video, i) => (
+        <VideoCard video={video} key={i} />
       ))}
     </ul>
   );
-}
+};
 
-function Movie({ movie }: { movie: Movie }) {
+const VideoCard = ({ video }: { video: Video }) => {
   return (
-    <li className="movieCard">
-      <strong className="movieTitle">{movie.title}</strong>
+    <li className="videoCard">
+      <strong className="videoTitle">{video.title}</strong>
       <PlayButton />
     </li>
   );
-}
+};
 
-function PlayButton() {
+const PlayButton = () => {
   return <button className="playButton"></button>;
-}
+};
+// ---------------------------
