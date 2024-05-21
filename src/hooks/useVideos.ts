@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useState } from "react";
 
 export type Video = {
   id?: string;
@@ -8,18 +9,17 @@ export type Video = {
   path?: string;
 };
 
-const URL = "https://df8a-77-71-159-208.ngrok-free.app";
+const URL = "https://f913-77-71-159-208.ngrok-free.app";
 
 export const useVideos = () => {
-  const fetchVideo = async (path: string) => {
-    const result = await axios.get(`${URL}/${path}`);
-    return result.data;
-  };
+  const [videos, setVideos] = useState<Video[] | []>([]);
 
   const fetchVideos = async () => {
-    const result = await axios.get(`${URL}/videos`);
-    return result.data;
+    const result = await axios.get<Video[]>(`${URL}/videos`);
+    setVideos(result.data);
   };
 
-  return { fetchVideo, fetchVideos };
+  fetchVideos();
+
+  return { videos };
 };

@@ -15,20 +15,13 @@ type PlayerProps = {
 // MAIN
 
 export default function Home() {
-  const { fetchVideo, fetchVideos } = useVideos();
-
-  const [videos, setVideos] = useState([]);
-
-  useEffect(() => {
-    const videoList = fetchVideos();
-    setVideos(videoList);
-  }, []);
+  const { videos } = useVideos();
 
   return (
     <div>
       <header>Streamer</header>
       <Player source={""} />
-      <VideoList videoList={[]} />
+      <VideoList videoList={videos} />
     </div>
   );
 }
@@ -45,6 +38,7 @@ const Player = ({ source, controls = true, autoPlay = true }: PlayerProps) => {
 
 // Video Cards List
 const VideoList = ({ videoList }: VideoListProps) => {
+  console.log(videoList);
   return (
     <ul className="videoList">
       {videoList.map((video, i) => (
