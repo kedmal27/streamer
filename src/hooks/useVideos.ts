@@ -15,8 +15,13 @@ export const useVideos = () => {
   const [videos, setVideos] = useState<Video[] | []>([]);
 
   const fetchVideos = async () => {
-    const result = await axios.get<Video[]>(`${URL}/videos`);
-    setVideos(result.data);
+    try {
+      const result = await axios.get<Video[]>(`${URL}/videos`);
+      setVideos(result.data);
+    } catch ({ name, message }: any) {
+      console.log(name);
+      console.log(message);
+    }
   };
 
   fetchVideos();
