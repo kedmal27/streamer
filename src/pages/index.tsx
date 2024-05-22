@@ -38,7 +38,7 @@ const Player = ({ source, controls = true, autoPlay = true }: PlayerProps) => {
 
 // Video Cards List
 const VideoList = ({ videoList }: VideoListProps) => {
-  console.log(videoList);
+  // console.log(videoList);
   return (
     <ul className="videoList">
       {videoList.map((video, i) => (
