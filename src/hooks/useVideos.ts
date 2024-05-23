@@ -1,30 +1,27 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export type Video = {
-  id?: string;
-  createdAt?: string;
-  updatedAt?: string;
+export type VideoTypes = {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
   title: string;
-  path?: string;
+  path: string;
 };
 
-const URL = "https://f913-77-71-159-208.ngrok-free.app";
+const URL = "https://kyrancodes.app";
 
 export const useVideos = () => {
-  const [videos, setVideos] = useState<Video[] | []>([]);
+  const [videos, setVideos] = useState<VideoTypes[] | []>([]);
 
   const fetchVideos = async () => {
-    try {
-      const result = await axios.get<Video[]>(`${URL}/videos`);
-      setVideos(result.data);
-    } catch ({ name, message }: any) {
-      console.log(name);
-      console.log(message);
-    }
+    const result = await axios.get<VideoTypes[]>(`${URL}/videos`);
+    setVideos(result.data);
   };
 
-  fetchVideos();
+  useEffect(() => {
+    fetchVideos();
+  }, []);
 
   return { videos };
 };

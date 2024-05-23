@@ -61,3 +61,8 @@ header {
   opacity: 100%;
   cursor: pointer;
 }
+
+.videoContainer {
+  margin: 0 auto;
+  width: 70%;
+}
