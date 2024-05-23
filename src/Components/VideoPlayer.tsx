@@ -9,11 +9,11 @@ export const VideoPlayer = (props: any) => {
     if (videoNode.current) {
       const _player: any = videojs(videoNode.current, props);
       setPlayer(_player);
-      return () => {
-        if (player !== null) {
-          player.dispose();
-        }
-      };
+      // return () => {
+      //   if (player !== null) {
+      //     player.dispose();
+      //   }
+      // };
     }
   }, []);
 
