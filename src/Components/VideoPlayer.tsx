@@ -15,6 +15,7 @@ export const VideoPlayer = (props: any) => {
       //   }
       // };
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
