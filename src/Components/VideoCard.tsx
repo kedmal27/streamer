@@ -5,7 +5,7 @@ export const VideoCard = ({ video }: { video: VideoTypes }) => {
   return (
     <li className="videoCard">
       <strong className="videoTitle">{video.title}</strong>
-      <PlayButton />
+      <PlayButton videoSource={video.path} />
     </li>
   );
 };

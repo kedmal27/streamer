@@ -3,8 +3,9 @@ import { useVideos } from "../hooks/useVideos";
 import "video.js/dist/video-js.css";
 import { VideoPlayer } from "@/Components/VideoPlayer";
 import { VideoList } from "@/Components/VideoList";
+import { useState } from "react";
 
-const play = {
+let play = {
   fill: true,
   fluid: true,
   autoplay: false,
@@ -20,7 +21,7 @@ const play = {
 
 export default function Home() {
   const { videos } = useVideos();
-  // const [video, setVideo] = useState("");
+  const [newVideo, setNewVideo] = useState("");
 
   return (
     <div>
@@ -28,7 +29,7 @@ export default function Home() {
       <div className="videoContainer">
         <VideoPlayer {...play} />
       </div>
-      <VideoList videoList={videos} />
+      <VideoList videoList={videos} setVideo={setNewVideo} />
     </div>
   );
 }
