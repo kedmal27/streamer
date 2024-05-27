@@ -13,8 +13,11 @@ let play = {
   preload: "metadata",
   sources: [
     {
-      src: "https://kyrancodes.app/video/6cf10945-8c9b-49e0-9a0c-cc3ba3e3a74c/6cf10945-8c9b-49e0-9a0c-cc3ba3e3a74c.m3u8",
-      type: "application/x-mpegURL",
+      // While API is down
+      // src: "https://kyrancodes.app/video/6cf10945-8c9b-49e0-9a0c-cc3ba3e3a74c/6cf10945-8c9b-49e0-9a0c-cc3ba3e3a74c.m3u8",
+      // type: "application/x-mpegURL",
+      src: "//vjs.zencdn.net/v/oceans.mp4",
+      type: "video/mp4",
     },
   ],
 };
