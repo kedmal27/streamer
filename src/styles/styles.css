@@ -10,6 +10,16 @@ body {
 
 header {
   height: 100px;
+  width: 100%;
+  margin-bottom: 50px;
+  padding: 10px;
+
+  background-color: white;
+}
+header .link {
+  border-style: none;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .videoList {
@@ -65,4 +75,56 @@ header {
 .videoContainer {
   margin: 0 auto;
   width: 70%;
+}
+
+.loginContainer {
+  width: 100%;
+}
+
+.loginForm {
+  width: 300px;
+  margin: 0 auto;
+  padding: 50px 50px 100px 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  border-radius: 10px;
+  background-color: white;
+}
+
+.loginForm h2 {
+  width: 100%;
+  border-bottom: 1px solid #437c90;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+
+.loginForm section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.loginForm label {
+  font-weight: bold;
+}
+
+.loginForm input {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.loginForm button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+
+  border-radius: 10px;
 }

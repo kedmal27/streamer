@@ -4,6 +4,8 @@ import "video.js/dist/video-js.css";
 import { VideoPlayer } from "@/Components/VideoPlayer";
 import { VideoList } from "@/Components/VideoList";
 import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 let play = {
   fill: true,
@@ -23,16 +25,28 @@ let play = {
 };
 
 export default function Home() {
+  const router = useRouter();
   const { videos } = useVideos();
   const [newVideo, setNewVideo] = useState("");
 
   return (
-    <div>
-      <header>Streamer</header>
+    <section>
+      <header>
+        <nav>
+          <button
+            className="link"
+            type="button"
+            onClick={() => router.push("/login")}
+          >
+            Login
+          </button>
+        </nav>
+      </header>
+
       <div className="videoContainer">
         <VideoPlayer {...play} />
       </div>
       <VideoList videoList={videos} setVideo={setNewVideo} />
-    </div>
+    </section>
   );
 }
