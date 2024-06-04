@@ -82,7 +82,7 @@ header .link {
 }
 
 .loginForm {
-  width: 300px;
+  width: 70%;
   margin: 0 auto;
   padding: 50px 50px 100px 50px;
 
@@ -112,13 +112,10 @@ header .link {
   width: 100%;
 }
 
-.loginForm label {
-  font-weight: bold;
-}
-
 .loginForm input {
   padding: 10px;
   border-radius: 10px;
+  width: 100%;
 }
 
 .loginForm button {
