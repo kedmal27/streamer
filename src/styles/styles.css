@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #437c90;
+  background-color: #06070e;
 }
 
 header {
@@ -77,51 +77,55 @@ header .link {
   width: 70%;
 }
 
-.loginContainer {
+/* LOGIN PAGE */
+
+.loginBody {
   width: 100%;
 }
 
-.loginForm {
-  width: 70%;
-  margin: 0 auto;
-  padding: 50px 50px 100px 50px;
-
+.loginCard {
   display: flex;
+  width: 500px;
+  height: 600px;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
 
-  border-radius: 10px;
-  background-color: white;
+  margin: 0 auto;
+
+  border-radius: 4px;
+  background-color: #437c90;
 }
 
-.loginForm h2 {
+.loginCard h2 {
   width: 100%;
-  border-bottom: 1px solid #437c90;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
 
+  padding-top: 20px;
+
+  color: #f8f9fa;
   text-align: center;
 }
 
-.loginForm section {
+.loginForm {
+  flex: 1;
   display: flex;
+  row-gap: 80px;
+
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+}
+
+.loginForm input,
+.loginForm button {
+  box-sizing: border-box;
+  width: 70%;
+  height: 50px;
 }
 
 .loginForm input {
-  padding: 10px;
-  border-radius: 10px;
-  width: 100%;
+  padding: 20px;
+  border-radius: 4px;
 }
 
 .loginForm button {
-  width: 100%;
-  margin-top: 20px;
-  padding: 10px;
-
-  border-radius: 10px;
+  border: none;
 }

@@ -1,5 +1,5 @@
-import router, { useRouter } from "next/router";
-import loginBk from "../../img/login_background.jpg";
+import { useRouter } from "next/router";
+import background from "./../../img/login_background.png";
 
 export default function Home() {
   const router = useRouter();
@@ -18,18 +18,16 @@ export default function Home() {
         </nav>
       </header>
 
-      <div className="loginContainer">
-        <form className="loginForm" name="login">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={loginBk} alt="Background image" />
-          <section>
-            <h2>Log In</h2>
+      <div className="loginBody">
+        <div className="loginCard">
+          <h2>Log In</h2>
+          <form className="loginForm" name="login">
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
-          </section>
 
-          <button type="submit">Log in</button>
-        </form>
+            <button type="submit">Log in</button>
+          </form>
+        </div>
       </div>
     </section>
   );

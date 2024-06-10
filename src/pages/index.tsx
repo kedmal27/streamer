@@ -4,7 +4,6 @@ import "video.js/dist/video-js.css";
 import { VideoPlayer } from "@/Components/VideoPlayer";
 import { VideoList } from "@/Components/VideoList";
 import { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 let play = {
