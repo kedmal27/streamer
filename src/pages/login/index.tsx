@@ -1,11 +1,12 @@
+import { LoginForm } from "@/Components/LoginForm";
 import { useRouter } from "next/router";
-import background from "./../../img/login_background.png";
+// import background from "./../../img/login_background.png";
 
 export default function Home() {
   const router = useRouter();
 
   return (
-    <section>
+    <>
       <header>
         <nav>
           <button
@@ -21,14 +22,9 @@ export default function Home() {
       <div className="loginBody">
         <div className="loginCard">
           <h2>Log In</h2>
-          <form className="loginForm" name="login">
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-
-            <button type="submit">Log in</button>
-          </form>
+          <LoginForm />
         </div>
       </div>
-    </section>
+    </>
   );
 }
